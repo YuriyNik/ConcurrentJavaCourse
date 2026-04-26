@@ -63,10 +63,10 @@ public class StartVsRunDemo {
         // OPTION 1: run() -> same main thread
         // Uncomment to test
 
-        log("Calling run()");
-        task1.run();
-        task2.run();
-        task3.run();
+//        log("Calling run()");
+//        task1.run();
+//        task2.run();
+//        task3.run();
 
 
         // ===============================
