@@ -34,11 +34,11 @@ public class BackgroundTicker {
     public static void main(String[] args) {
         startDaemon("ticker", 200);
 
-        // Запуск первого пользовательского потока
+        // Start first user thread
         Thread userTask1 = new Thread(() -> {
             log("User task 1 starting");
             try {
-                // Симуляция короткого вычисления (например, 2 секунды)
+                // Simulate short computation (e.g., 2 seconds)
                 Thread.sleep(2000);
                 log("User task 1 completed");
             } catch (InterruptedException e) {
@@ -48,11 +48,11 @@ public class BackgroundTicker {
         },"UserTask1");
         userTask1.start();
 
-        // Запуск второго пользовательского потока (опционально, для 2 потоков)
+        // Start second user thread (optional, for 2 threads)
         Thread userTask2 = new Thread(() -> {
             log("User task 2 starting");
             try {
-                // Симуляция короткого вычисления (например, 1 секунда)
+                // Simulate short computation (e.g., 1 second)
                 Thread.sleep(1000);
                 log("User task 2 completed");
             } catch (InterruptedException e) {
@@ -62,7 +62,7 @@ public class BackgroundTicker {
         },"UserTask2");
         userTask2.start();
 
-//         (Optional - just for demo )Ожидание завершения пользовательских потоков (чтобы main не завершился сразу)
+        // (Optional - just for demo) Wait for user threads to complete (so main doesn't exit immediately)
         try {
             userTask1.join();
             userTask2.join();

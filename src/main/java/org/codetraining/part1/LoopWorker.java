@@ -17,7 +17,7 @@ public class LoopWorker {
                 counter++;
                 log("counter = " + counter);
                 try {
-                    Thread.sleep(250); // 200-300 мс
+                    Thread.sleep(250); // 200-300 ms
                 } catch (InterruptedException e) {
                     Thread.currentThread().interrupt();
                     log("caught InterruptedException, exiting");
@@ -53,18 +53,18 @@ public class LoopWorker {
         LoopWorker worker = new LoopWorker("worker-1");
         worker.start();
 
-        // Даём поработать 1.5-2 сек
+        // Let it work for 1.5-2 seconds
         try {
             Thread.sleep(1500);
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
 
-        // Останавливаем
+        // Stop the worker
         System.out.println("\n--- Calling stopAsync() ---\n");
         worker.stopAsync();
 
-        // Даём время на завершение
+        // Give time to finish
         try {
             Thread.sleep(500);
         } catch (InterruptedException e) {
