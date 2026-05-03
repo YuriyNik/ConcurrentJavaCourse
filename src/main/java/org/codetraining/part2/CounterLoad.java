@@ -9,13 +9,13 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class CounterLoad {
     public static void runLoad(Counter counter, int threadsCount, int iterationsPerThread) {
-        // 1) создать threadsCount потоков
-        // 2) синхронизировать старт (CountDownLatch/CyclicBarrier)
-        // 3) каждый поток делает iterationsPerThread increment()
-        // 4) засечь время через System.nanoTime()
-        // 5) дождаться завершения всех потоков
-        // 6) посчитать expected = threadsCount * iterationsPerThread
-        // 7) напечатать в одну строку:
+        // 1) Create threadsCount threads
+        // 2) Synchronize start (CountDownLatch/CyclicBarrier)
+        // 3) Each thread performs iterationsPerThread increments
+        // 4) Measure time via System.nanoTime()
+        // 5) Wait for all threads to complete
+        // 6) Calculate expected = threadsCount * iterationsPerThread
+        // 7) Print in one line:
         // "<Impl-X>: expected=<...>, actual=<...>, timeMs=<...>"
 
         CountDownLatch startLatch = new CountDownLatch(1);
